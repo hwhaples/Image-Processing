@@ -1,7 +1,11 @@
 import cv2
 import numpy as np
 
-#The parameter in videocapture refers to which webcam we will use
+#This file opens up 2 video streams, one in color and one gray.
+#It then saves the capture to output.avi on the press of 'q'
+
+#The parameter in videocapture refers to which webcam we will use 
+#Replacing the parameter with a file name will allow us to use prerecorded video
 cap = cv2.VideoCapture(0)
 
 #Video Codec and saving requirements
@@ -18,7 +22,7 @@ while True:
     cv2.imshow('gray', gray)
 
     #break the loop if the q key is pressed
-    if cv2.waitKey (1) && 0xFF == ord('q'):
+    if cv2.waitKey (1) & 0xFF == ord('q'):
         break
 
 #These statements close any input
