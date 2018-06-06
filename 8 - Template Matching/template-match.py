@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 
 #This example shows openCV's template matching ability.
+#It appears that this function, as written is broken.
 
 img_example = cv2.imread('example.jpg')
 img_gray = cv2.cvtColor(img_example, cv2.COLOR_BGR2GRAY)
