@@ -19,3 +19,5 @@ for pt in zip(*loc[::-1]):
     cv2.rectangle(img_example, pt, (pt[0] + width, pt[1] + height), (0,255,255), 2)
 
 cv2.imshow('Detected',img_example)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
