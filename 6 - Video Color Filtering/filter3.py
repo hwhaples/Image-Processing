@@ -18,7 +18,7 @@ while True:
 
     #now we will set a mask for the color
     mask = cv2.inRange(hsv, lower_color, upper_color)
-    res = cv2.bitwise_and(frame, frame, mask = mask) #masks the color on top of frame
+    
 
     kernel = np.ones((5,5), np.uint8)
 
@@ -31,6 +31,8 @@ while True:
     #opening and closing are morph transforms that further reduce noise
     opening = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
     closing = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
+
+    res = cv2.bitwise_and(frame, frame, mask = opening) #masks the color on top of frame
 
     #show all the windows
     cv2.imshow('frame', frame)
